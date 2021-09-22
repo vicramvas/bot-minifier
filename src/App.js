@@ -3,7 +3,8 @@ import React from 'react';
 import { Route, Switch } from 'react-router';
 import './App.css';
 import Home from './Pages/Home';
- import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import {VirtualAssistant} from './Components/VirtualHelper/VirtualAssistant'
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 // import NavMenu from './NavMenu';
 import { SideBar } from './Components/SideBar';
 
@@ -18,6 +19,8 @@ function App() {
           <div className="col-10">
               <Switch>
                 <Route exact path='/' component={Home} />
+                <Route exact path='/virtual-assistant' component={VirtualAssistant} />
+
               </Switch>
           </div>
         </div>
