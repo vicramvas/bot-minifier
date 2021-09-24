@@ -1,50 +1,19 @@
 import React from 'react';
-import axios from 'axios';
-import { LineChart } from '../Components/Charts/LineChart';
-import { PolarAreaChart } from '../Components/Charts/PolarAreaChart';
-import { RadarChart } from '../Components/Charts/RadarChart';
-import { DoughnutChart } from '../Components/Charts/DoughnutChart'
-import { useHistory } from 'react-router';
-//import Button from '@mui/material/Button';
-
-const covidURL = 'https://data.covid19india.org/v4/min/timeseries.min.json'
+import { useHistory } from "react-router-dom";
+import Button from '@mui/material/Button';
 const Home = () => {
-
-    const [covStatus, setStatus]= React.useState(null);
-
-    React.useEffect(()=>{
-        axios.get(covidURL).then((response)=>{
-            setStatus(response.data)
-        });
-    },[]);
-    if(!covStatus) return null;
-    console.log(covStatus);
-    return(
-        <section className="row">
-            <div className='col-6 card'>
-            <h1>Chart</h1>
-                <LineChart data={covStatus}/>
-            </div>
-             <div className='col-6 card'>
-             <h1>Chart</h1>
-                <PolarAreaChart/>
-            </div>
-             <div className='col-6 card'>
-             <h1>Chart</h1>
-                <RadarChart/>
-            </div>
-             <div className='col-6 card'>
-             <h1>Chart</h1>
-                <DoughnutChart/>
-                </div>
-  </section>)
-    {/* return (
+    const history = useHistory();
+    const redirectToDashboard = () => {
+        history.push('/dashboard');
+    }
+    return (
         <section className="row bg">
             <div className="main-wrapper">
                 <h1>Hackathon - Bot Minifiers</h1>
                 <Button variant="contained" onClick={redirectToDashboard}>Launch Application</Button>
             </div>
-        </section> */}
+        </section>
+    )
 }
 
 export default Home;
