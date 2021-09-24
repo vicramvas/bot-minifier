@@ -1,6 +1,6 @@
 import React from "react";
 import ChatBot from 'react-simple-chatbot';
-export  const VirtualAssistant = () => {
+export const VirtualAssistant = () => {
   return <ChatBot
             headerTitle="Virtual Assistant"
             speechSynthesis={{ enable: true, lang: 'en' }}

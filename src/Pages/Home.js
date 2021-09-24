@@ -4,6 +4,8 @@ import { LineChart } from '../Components/Charts/LineChart';
 import { PolarAreaChart } from '../Components/Charts/PolarAreaChart';
 import { RadarChart } from '../Components/Charts/RadarChart';
 import { DoughnutChart } from '../Components/Charts/DoughnutChart'
+import { useHistory } from 'react-router';
+//import Button from '@mui/material/Button';
 
 const covidURL = 'https://data.covid19india.org/v4/min/timeseries.min.json'
 const Home = () => {
@@ -34,9 +36,15 @@ const Home = () => {
              <div className='col-6 card'>
              <h1>Chart</h1>
                 <DoughnutChart/>
+                </div>
+  </section>)
+    {/* return (
+        <section className="row bg">
+            <div className="main-wrapper">
+                <h1>Hackathon - Bot Minifiers</h1>
+                <Button variant="contained" onClick={redirectToDashboard}>Launch Application</Button>
             </div>
-        </section>
-    )
+        </section> */}
 }
 
 export default Home;
